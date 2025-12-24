@@ -67,9 +67,9 @@ const Index = () => {
       </section>
 
       {/* Featured Article Section */}
-      <section className="relative py-24 bg-navy-dark">
+      <section className="relative py-24">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${whiteHouseHero})` }}
         />
         <div className="relative z-10 container-custom section-padding">

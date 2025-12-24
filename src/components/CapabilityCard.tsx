@@ -12,7 +12,7 @@ interface CapabilityCardProps {
 
 const CapabilityCard = ({ icon: Icon, title, description, buttonText, buttonLink }: CapabilityCardProps) => {
   return (
-    <div className="bg-card border border-border rounded-lg shadow-sm p-6 flex flex-col h-full">
+    <div className="bg-card border border-border rounded-lg shadow-sm p-6 flex flex-col h-full transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
       {/* Icon at top center with light gray background */}
       <div className="mb-6 flex justify-center">
         <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">

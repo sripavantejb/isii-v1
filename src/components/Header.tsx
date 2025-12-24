@@ -55,7 +55,7 @@ const Header = ({ variant = "solid" }: HeaderProps) => {
         <div className="container-custom section-padding flex justify-end">
           <span className="text-primary-foreground/80">
             Need to get in touch with us?{" "}
-            <Link to="/engage" className="underline hover:text-primary-foreground">
+            <Link to="/engage" className="hover:text-primary-foreground">
               Contact us here
             </Link>
           </span>
@@ -74,7 +74,7 @@ const Header = ({ variant = "solid" }: HeaderProps) => {
             {navItems.map((item) => (
               item.dropdown ? (
                 <DropdownMenu key={item.path}>
-                  <DropdownMenuTrigger className={`flex items-center gap-1 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors ${isActive(item.path) ? "text-primary-foreground font-medium" : ""}`}>
+                  <DropdownMenuTrigger className={`flex items-center gap-1 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors no-underline ${isActive(item.path) ? "text-primary-foreground font-medium" : ""}`}>
                     {item.label}
                     <ChevronDown className="w-4 h-4" />
                   </DropdownMenuTrigger>
@@ -92,7 +92,7 @@ const Header = ({ variant = "solid" }: HeaderProps) => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors ${isActive(item.path) ? "text-primary-foreground font-medium" : ""}`}
+                  className={`text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors no-underline ${isActive(item.path) ? "text-primary-foreground font-medium" : ""}`}
                 >
                   {item.label}
                 </Link>
@@ -124,7 +124,7 @@ const Header = ({ variant = "solid" }: HeaderProps) => {
                     open={capabilitiesOpen} 
                     onOpenChange={setCapabilitiesOpen}
                   >
-                    <CollapsibleTrigger className="flex items-center justify-between w-full py-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors border-b border-primary-foreground/10">
+                    <CollapsibleTrigger className="flex items-center justify-between w-full py-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors border-b border-primary-foreground/10 no-underline">
                       <span>{item.label}</span>
                       <ChevronDown className={`w-4 h-4 transition-transform ${capabilitiesOpen ? "rotate-180" : ""}`} />
                     </CollapsibleTrigger>
@@ -133,7 +133,7 @@ const Header = ({ variant = "solid" }: HeaderProps) => {
                         <Link
                           key={subItem.path}
                           to={subItem.path}
-                          className="block py-3 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                          className="block py-3 text-primary-foreground/70 hover:text-primary-foreground transition-colors no-underline"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {subItem.label}
@@ -145,7 +145,7 @@ const Header = ({ variant = "solid" }: HeaderProps) => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`py-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors border-b border-primary-foreground/10 ${isActive(item.path) ? "text-primary-foreground font-medium" : ""}`}
+                    className={`py-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors border-b border-primary-foreground/10 no-underline ${isActive(item.path) ? "text-primary-foreground font-medium" : ""}`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
