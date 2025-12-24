@@ -25,10 +25,10 @@ const Engage = () => {
       {/* Hero Section */}
       <section className="py-16" style={{ backgroundColor: '#f4f4f6' }}>
         <div className="container-custom section-padding">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4 animate-fade-in">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4 animate-fade-in" style={{ willChange: "opacity, transform" }}>
             Engage
           </h1>
-          <p className="text-muted-foreground max-w-xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <p className="text-muted-foreground max-w-xl animate-fade-in" style={{ willChange: "opacity, transform" }}>
             Connect with ISII to explore strategic partnerships and collaboration opportunities.
           </p>
         </div>
@@ -37,15 +37,15 @@ const Engage = () => {
       {/* Get in Touch Section */}
       <section className="py-24 bg-background">
         <div className="container-custom section-padding text-center">
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary mb-6 animate-fade-in">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary mb-6 animate-fade-in" style={{ willChange: "opacity, transform" }}>
             Get in Touch
           </h2>
           
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in" style={{ willChange: "opacity, transform" }}>
             Whether you represent a sovereign entity, institution, or organisation navigating complex transitions, we welcome the opportunity to explore how ISII can support your strategic objectives.
           </p>
           
-          <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="animate-fade-in" style={{ willChange: "opacity, transform" }}>
             <Button variant="default" size="lg" asChild>
               <Link to="mailto:contact@isii.org" className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
@@ -59,13 +59,13 @@ const Engage = () => {
       {/* Areas of Engagement */}
       <section className="py-24 bg-muted">
         <div className="container-custom section-padding">
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary text-center mb-12 animate-fade-in">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary text-center mb-12 animate-fade-in" style={{ willChange: "opacity, transform" }}>
             Areas of Engagement
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {engagementAreas.map((area, index) => (
-              <div key={area.title} style={{ animationDelay: `${index * 0.1}s` }}>
+            {engagementAreas.map((area) => (
+              <div key={area.title}>
                 <EngagementCard {...area} />
               </div>
             ))}

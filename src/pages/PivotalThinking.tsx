@@ -54,7 +54,7 @@ const PivotalThinking = () => {
       {/* Hero Section */}
       <section className="py-12 bg-primary">
         <div className="container-custom section-padding">
-          <div className="flex items-center gap-2 text-sm text-primary-foreground/60 mb-4 animate-fade-in">
+          <div className="flex items-center gap-2 text-sm text-primary-foreground/60 mb-4 animate-fade-in" style={{ willChange: "opacity, transform" }}>
             <Link to="/capabilities/pivotal-thinking" className="hover:text-primary-foreground">
               Capabilities
             </Link>
@@ -62,11 +62,11 @@ const PivotalThinking = () => {
             <span className="text-primary-foreground">Pivotal Thinking</span>
           </div>
           
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mb-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mb-4 animate-fade-in" style={{ willChange: "opacity, transform" }}>
             Pivotal Thinking
           </h1>
           
-          <p className="text-primary-foreground/80 max-w-2xl animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <p className="text-primary-foreground/80 max-w-2xl animate-fade-in" style={{ willChange: "opacity, transform" }}>
             Generating strategic intelligence to understand transitions, shocks, and inflection points across geopolitics, technology, economics, climate and society.
           </p>
         </div>
@@ -83,13 +83,13 @@ const PivotalThinking = () => {
       {/* Content Library */}
       <section id="content-library" className="py-24 bg-background">
         <div className="container-custom section-padding">
-          <h2 className="font-serif text-2xl md:text-3xl text-primary mb-12 animate-fade-in">
+          <h2 className="font-serif text-2xl md:text-3xl text-primary mb-12 animate-fade-in" style={{ willChange: "opacity, transform" }}>
             Content Library
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {articles.map((article, index) => (
-              <div key={article.title} className="h-full" style={{ animationDelay: `${index * 0.1}s` }}>
+            {articles.map((article) => (
+              <div key={article.title} className="h-full">
                 <ArticleCard {...article} />
               </div>
             ))}
