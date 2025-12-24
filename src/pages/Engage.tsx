@@ -25,7 +25,7 @@ const Engage = () => {
       {/* Hero Section */}
       <section className="py-16" style={{ backgroundColor: '#f4f4f6' }}>
         <div className="container-custom section-padding">
-          <h1 className="font-serif text-4xl md:text-5xl text-primary mb-4 animate-fade-in">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4 animate-fade-in">
             Engage
           </h1>
           <p className="text-muted-foreground max-w-xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
@@ -37,7 +37,7 @@ const Engage = () => {
       {/* Get in Touch Section */}
       <section className="py-24 bg-background">
         <div className="container-custom section-padding text-center">
-          <h2 className="font-serif text-2xl md:text-3xl text-primary mb-6 animate-fade-in">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary mb-6 animate-fade-in">
             Get in Touch
           </h2>
           
@@ -59,7 +59,7 @@ const Engage = () => {
       {/* Areas of Engagement */}
       <section className="py-24 bg-muted">
         <div className="container-custom section-padding">
-          <h2 className="font-serif text-2xl md:text-3xl text-primary text-center mb-12 animate-fade-in">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary text-center mb-12 animate-fade-in">
             Areas of Engagement
           </h2>
           

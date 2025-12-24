@@ -8,7 +8,7 @@ const whiteHouseHero = "https://res.cloudinary.com/dqataciy5/image/upload/v17665
 const heroImage = "https://res.cloudinary.com/dqataciy5/image/upload/v1766554875/Main_3_mgq0be.png";
 const tabletImage = "https://res.cloudinary.com/dqataciy5/image/upload/v1766554969/Main_4_moupgm.png";
 const mobileImage = "https://res.cloudinary.com/dqataciy5/image/upload/v1766555015/Main_5_g6lkoh.png";
-const bannerImage = "https://res.cloudinary.com/dqataciy5/image/upload/v1766557543/Frame_1707482985_z3u8u7.png";
+const bannerImage = "https://res.cloudinary.com/dqataciy5/image/upload/v1766566342/Frame_1707482985_1_d51ujw.png";
 
 const Index = () => {
   const capabilities = [
@@ -53,16 +53,16 @@ const Index = () => {
         
         <div className="relative z-10 container-custom section-padding py-24">
           <div className="max-w-2xl">
-            <h1 className="font-serif text-5xl md:text-6xl text-accent mb-4 animate-fade-in">
+            <h1 className="font-serif text-5xl md:text-6xl font-bold text-accent mb-4 animate-fade-in" style={{ willChange: "opacity, transform" }}>
               ISII
             </h1>
-            <h2 className="font-serif text-2xl md:text-3xl text-primary-foreground mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary-foreground mb-6 animate-fade-in" style={{ animationDelay: "0.1s", willChange: "opacity, transform" }}>
               Institute for Strategic Intelligence and Intervention
             </h2>
-            <p className="text-primary-foreground/90 leading-relaxed mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <p className="text-primary-foreground/90 leading-relaxed mb-8 animate-fade-in" style={{ animationDelay: "0.2s", willChange: "opacity, transform" }}>
               The Institute for Strategic Intelligence and Intervention (ISII) exists to understand and shape the system-level transitions, major events, and strategic turning points affecting nations, regions, and global structures. Its mission is to generate the strategic intelligence required for high-stakes decision-making, and to design and execute interventions that stabilise environments, reposition sovereigns, mobilise capital and technology, and enable societies to transition securely and prosperously into the Information Era.
             </p>
-            <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="animate-fade-in" style={{ animationDelay: "0.3s", willChange: "opacity, transform" }}>
               <Button variant="hero" size="lg" asChild>
                 <Link to="/about">About us</Link>
               </Button>
@@ -85,8 +85,9 @@ const Index = () => {
               <span className="inline-block bg-primary px-4 py-1 text-xs text-primary-foreground uppercase tracking-wider mb-6">
                 Our Latest Pivotal Thinking
               </span>
-              <h2 className="font-serif text-3xl md:text-4xl text-primary-foreground mb-4 max-w-xl text-left">
-                America the Merchant Power, The National Security Strategy 2025
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary-foreground mb-4 max-w-2xl text-left">
+                America the Merchant Power,<br />
+                The National Security Strategy 2025
               </h2>
               <div className="text-left">
                 <Button variant="outline-light" asChild>

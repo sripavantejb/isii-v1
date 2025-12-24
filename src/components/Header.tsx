@@ -55,7 +55,7 @@ const Header = ({ variant = "solid" }: HeaderProps) => {
         <div className="container-custom section-padding flex justify-end">
           <span className="text-primary-foreground/80">
             Need to get in touch with us?{" "}
-            <Link to="/engage" className="no-underline">
+            <Link to="/engage" className="underline">
               Contact us here
             </Link>
           </span>

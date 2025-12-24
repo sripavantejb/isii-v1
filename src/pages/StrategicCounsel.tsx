@@ -12,7 +12,7 @@ const StrategicCounsel = () => {
             <span className="text-primary-foreground">Strategic Counsel</span>
           </div>
           
-          <h1 className="font-serif text-4xl md:text-5xl text-primary-foreground mb-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mb-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
             Strategic Counsel
           </h1>
           
