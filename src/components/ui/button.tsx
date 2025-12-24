@@ -24,7 +24,7 @@ const buttonVariants = cva(
         hero:
           "bg-accent text-accent-foreground shadow-lg hover:bg-amber-hover",
         "outline-light":
-          "border border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground/10",
+          "border border-primary-foreground bg-transparent text-primary-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300",
       },
       size: {
         default: "h-10 px-6 py-2",

@@ -26,25 +26,25 @@ const About = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-16 bg-background">
+      <section className="py-16" style={{ backgroundColor: '#f2f5f7' }}>
         <div className="container-custom section-padding">
-          <h1 className="font-serif text-4xl md:text-5xl text-primary mb-4 animate-fade-in">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-2 animate-fade-in">
             About Us
           </h1>
-          <p className="text-muted-foreground animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <p className="font-serif text-base text-foreground animate-fade-in" style={{ animationDelay: "0.1s" }}>
             Our Mission
           </p>
         </div>
       </section>
 
       {/* Mission Statement */}
-      <section className="pb-24 bg-background">
+      <section className="pt-16 pb-24 bg-background">
         <div className="container-custom section-padding">
-          <h2 className="font-serif text-2xl md:text-3xl text-primary mb-8 animate-fade-in">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary mb-8 animate-fade-in">
             Mission Statement
           </h2>
           
-          <p className="text-muted-foreground leading-relaxed max-w-4xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <p className="font-serif text-base text-foreground leading-relaxed max-w-4xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
             The Institute for Strategic Intelligence and Intervention (ISII) exists to understand and shape the system-level transitions, major events, and strategic turning points affecting nations, regions, and global structures. Its mission is to generate the strategic intelligence required for high-stakes decision-making, and to design and execute interventions that stabilise environments, reposition sovereigns, mobilise capital and technology, and enable societies to transition securely and prosperously into the Information Era.
           </p>
         </div>
@@ -53,13 +53,13 @@ const About = () => {
       {/* People Section */}
       <section className="py-24 bg-muted">
         <div className="container-custom section-padding">
-          <h2 className="font-serif text-3xl md:text-4xl text-primary mb-12 animate-fade-in">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-12 animate-fade-in">
             People
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             {people.map((person, index) => (
-              <div key={person.name} style={{ animationDelay: `${index * 0.1}s` }}>
+              <div key={person.name} className="flex" style={{ animationDelay: `${index * 0.1}s` }}>
                 <PersonCard {...person} />
               </div>
             ))}

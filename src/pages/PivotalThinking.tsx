@@ -72,21 +72,16 @@ const PivotalThinking = () => {
         </div>
       </section>
 
-      {/* Hero Image Section */}
-      <section className="py-24 bg-muted">
-        <div className="container-custom section-padding">
-          <div className="flex items-center justify-center">
-            <img 
-              src={pivotalHero} 
-              alt="Pivotal Thinking" 
-              className="max-w-full h-auto rounded-lg shadow-lg"
-            />
-          </div>
-        </div>
+      {/* Banner Section */}
+      <section className="relative py-24">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${pivotalHero})` }}
+        />
       </section>
 
       {/* Content Library */}
-      <section className="py-24 bg-background">
+      <section id="content-library" className="py-24 bg-background">
         <div className="container-custom section-padding">
           <h2 className="font-serif text-2xl md:text-3xl text-primary mb-12 animate-fade-in">
             Content Library
@@ -94,7 +89,7 @@ const PivotalThinking = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {articles.map((article, index) => (
-              <div key={article.title} style={{ animationDelay: `${index * 0.1}s` }}>
+              <div key={article.title} className="h-full" style={{ animationDelay: `${index * 0.1}s` }}>
                 <ArticleCard {...article} />
               </div>
             ))}

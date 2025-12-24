@@ -23,7 +23,7 @@ const Engage = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-16 bg-background">
+      <section className="py-16" style={{ backgroundColor: '#f4f4f6' }}>
         <div className="container-custom section-padding">
           <h1 className="font-serif text-4xl md:text-5xl text-primary mb-4 animate-fade-in">
             Engage

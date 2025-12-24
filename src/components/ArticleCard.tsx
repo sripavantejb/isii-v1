@@ -10,8 +10,8 @@ interface ArticleCardProps {
 
 const ArticleCard = ({ image, date, title, link }: ArticleCardProps) => {
   return (
-    <div className="bg-card border border-border overflow-hidden group animate-fade-in">
-      <div className="aspect-[4/3] bg-muted overflow-hidden">
+    <div className="bg-card border border-border overflow-hidden group animate-fade-in h-full flex flex-col transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+      <div className="aspect-[16/9] bg-muted overflow-hidden flex-shrink-0">
         <img 
           src={image} 
           alt={title}
@@ -19,14 +19,14 @@ const ArticleCard = ({ image, date, title, link }: ArticleCardProps) => {
         />
       </div>
       
-      <div className="p-5">
-        <p className="text-xs text-muted-foreground mb-2">{date}</p>
-        <h3 className="font-serif text-lg text-primary mb-4 leading-snug">
+      <div className="p-5 flex flex-col flex-grow">
+        <p className="text-xs italic text-muted-foreground mb-2">{date}</p>
+        <h3 className="font-serif text-lg font-bold text-primary mb-4 leading-snug flex-grow">
           {title}
         </h3>
         <Link 
           to={link}
-          className="inline-flex items-center gap-2 text-sm text-accent hover:text-amber-hover transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors mt-auto"
         >
           Read more <ArrowRight className="w-4 h-4" />
         </Link>
