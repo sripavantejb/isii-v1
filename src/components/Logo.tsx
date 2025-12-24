@@ -1,6 +1,6 @@
 const Logo = ({ variant = "dark" }: { variant?: "dark" | "light" }) => {
   const textColor = variant === "light" ? "text-primary-foreground" : "text-primary";
-  const logoImage = "https://res.cloudinary.com/dqataciy5/image/upload/v1766555222/Frame_qsaw3j.png";
+  const logoImage = "https://res.cloudinary.com/dqataciy5/image/upload/v1766564895/Frame_1_fhwanr.png";
   
   return (
     <div className="flex items-center gap-2">

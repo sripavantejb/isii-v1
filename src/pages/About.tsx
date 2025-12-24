@@ -8,18 +8,67 @@ const About = () => {
       name: "Phoebe Koundouri",
       title: "Prof School of Economics & Director Research, Athens University; Director, AE4RIA",
       description: "Direct the economic, environmental and climate strategy for the transition",
+      image: "https://res.cloudinary.com/dqataciy5/image/upload/v1766565203/unnamed_nnjx6n.png",
+      drawingOn: [
+        "SDSN network of 1,700 members in 144 countries",
+        "200 multi-disciplinary sustainability scholars"
+      ],
     },
     {
       category: "Peace and Social Transition",
       name: "Garry Jacobs",
       title: "President, CEO, World Academy of Art & Science; Chairman, World University Consortium",
       description: "Direct the key aspects of the social transition plan for delivering human security for all",
+      drawingOn: [
+        "800 leading scientists and scholars",
+        "5 key programmes of peaceful social change"
+      ],
     },
     {
-      category: "Global Transition",
+      category: "Global Transition Architecture",
       name: "Ketan Patel",
       title: "Chair, Force for Good; CEO, Greater Pacific Capital; Former Head, Strategic Group, Goldman Sachs",
       description: "Direct delivery and management of the strategy and blueprint for the global transition",
+      image: "https://res.cloudinary.com/dqataciy5/image/upload/v1766565195/unnamed_1_ih4miy.png",
+      drawingOn: [
+        "100 leading financial institutions strategies",
+        "125 leading technology company strategies",
+        "International network in key geographies"
+      ],
+    },
+    {
+      category: "Media & Technology Transition",
+      name: "Jon Miller",
+      title: "CEO of Integrated Media, Former Chairman and CEO of AOL; NewsCorp Online Media Group",
+      description: "Direct the media strategy for mass population mobilisation for the transition",
+      image: "https://res.cloudinary.com/dqataciy5/image/upload/v1766565190/unnamed_2_jkokbt.png",
+      drawingOn: [
+        "Major mass mobilisation platforms",
+        "Leading new media platforms",
+        "Leading AI companies"
+      ],
+    },
+    {
+      category: "Tech Security Transition",
+      name: "Glenn Gaffney",
+      title: "Former Director, Science and Technology, CIA; EVP, IQT; Founder NobleReach",
+      description: "Direct the international science & technology strategy and roll-out plan for the transition",
+      image: "https://res.cloudinary.com/dqataciy5/image/upload/v1766565187/unnamed_3_vjxsqa.png",
+      drawingOn: [
+        "Major US science and technology labs and experts",
+        "International network of science and tech expertise"
+      ],
+    },
+    {
+      category: "Development Transition",
+      name: "Shaurya Doval",
+      title: "Founder India Foundation, Zeus Capital, Morgan Stanley, GE",
+      description: "Direct the development agenda for the rise of Global South and lower income populations",
+      image: "https://res.cloudinary.com/dqataciy5/image/upload/v1766565185/unnamed_lwetam.jpg",
+      drawingOn: [
+        "Development and social economics work",
+        "Asia and Middle East network"
+      ],
     },
   ];
 
@@ -57,7 +106,7 @@ const About = () => {
             People
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {people.map((person, index) => (
               <div key={person.name} className="flex" style={{ animationDelay: `${index * 0.1}s` }}>
                 <PersonCard {...person} />
