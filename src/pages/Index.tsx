@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import CapabilityCard from "@/components/CapabilityCard";
-import { Brain } from "lucide-react";
+import { Brain, Shield, TrendingUp } from "lucide-react";
 
 const whiteHouseHero = "https://res.cloudinary.com/dqataciy5/image/upload/v1766554226/White_House_2642x826_1_ck6dkk.png";
 const heroImage = "https://res.cloudinary.com/dqataciy5/image/upload/v1766554875/Main_3_mgq0be.png";
@@ -18,6 +18,20 @@ const Index = () => {
       description: "Generating strategic intelligence to understand transitions, shocks, inflection points across geopolitics, technology, economics, climate and society.",
       buttonText: "ALL PIVOTAL THINKING",
       buttonLink: "/capabilities/pivotal-thinking",
+    },
+    {
+      icon: Shield,
+      title: "Strategic Counsel",
+      description: "Supporting governments, blocs and institutions as they navigate structural change.",
+      buttonText: "SEE OUR MANDATES",
+      buttonLink: "#",
+    },
+    {
+      icon: TrendingUp,
+      title: "Systemic Intervention and Strategic Investment",
+      description: "Executing interventions to stabilise environments, mobilise capital and technology, and convert gaps into engines of prosperity.",
+      buttonText: "EXPLORE CAPABILITIES",
+      buttonLink: "#",
     },
   ];
 
@@ -108,7 +122,7 @@ const Index = () => {
             Our Capabilities
           </h2>
           
-          <div className="grid md:grid-cols-1 gap-8 max-w-md mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
             {capabilities.map((capability) => (
               <CapabilityCard key={capability.title} {...capability} />
             ))}
