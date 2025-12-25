@@ -47,7 +47,7 @@ const Header = ({ variant = "solid" }: HeaderProps) => {
     : "bg-primary";
 
   return (
-    <header className="w-full sticky top-0 z-50">
+    <header className="w-full fixed top-0 left-0 right-0 z-50">
       {/* Top bar */}
       <div className="text-primary-foreground text-xs py-1" style={{ backgroundColor: '#224077' }}>
         <div className="container-custom section-padding flex justify-end">

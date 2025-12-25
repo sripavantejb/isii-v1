@@ -2,7 +2,7 @@ interface PersonCardProps {
   category: string;
   name: string;
   title: string;
-  description: string;
+  description?: string;
   drawingOn?: string[];
   image?: string;
 }
@@ -29,23 +29,25 @@ const PersonCard = ({ category, name, title, description, drawingOn, image }: Pe
 
       {/* Card Content */}
       <div className="bg-card pt-20 pb-6 px-6 border-l-4 border-t border-r border-b border-border animate-fade-in h-full flex flex-col" style={{ borderLeftColor: '#d6795a' }}>
-        <p className="text-xs text-accent font-medium uppercase tracking-wider mb-3">
+        <p className="text-xs font-extrabold uppercase tracking-wider mb-3" style={{ color: '#d6795a' }}>
           {category}
         </p>
         
-        <h3 className="font-serif text-xl text-primary mb-2">{name}</h3>
+        <h3 className="font-serif text-xl text-primary font-bold mb-2">{name}</h3>
         
         <p className="text-sm text-muted-foreground mb-4">
           {title}
         </p>
         
-        <p className="text-sm text-accent mb-4">
-          {description}
-        </p>
+        {description && (
+          <p className="text-sm text-accent mb-4">
+            {description}
+          </p>
+        )}
         
         {drawingOn && drawingOn.length > 0 && (
           <div className="mt-auto">
-            <p className="text-xs text-muted-foreground font-medium mb-2">Drawing on:</p>
+            <p className="text-xs text-black font-bold mb-2">Drawing on:</p>
             <ul className="text-xs text-muted-foreground space-y-1 list-disc list-inside">
               {drawingOn.map((item, index) => (
                 <li key={index}>{item}</li>

@@ -96,15 +96,15 @@ const Index = () => {
               <span className="inline-block bg-primary px-4 py-1 text-xs text-primary-foreground uppercase tracking-wider mb-6">
                 Our Latest Pivotal Thinking
               </span>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary-foreground mb-4 text-left">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary-foreground mb-4 text-left leading-relaxed">
                 <span className="md:hidden block">
-                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>America the Merchant Power,</span>
-                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>The National Security</span>
-                  <span style={{ display: 'block', whiteSpace: 'nowrap' }}>Strategy 2025</span>
+                  <span style={{ display: 'block' }}>America the Merchant Power,</span>
+                  <span style={{ display: 'block' }}>The National Security</span>
+                  <span style={{ display: 'block' }}>Strategy 2025</span>
                 </span>
                 <span className="hidden md:block max-w-2xl">
                   America the Merchant Power,<br />
-                  The National Security Strategy 2025
+                  <span style={{ display: 'block', marginTop: '0.5rem' }}>The National Security Strategy 2025</span>
                 </span>
               </h2>
               <div className="text-left">
