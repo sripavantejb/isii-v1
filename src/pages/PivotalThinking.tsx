@@ -66,7 +66,7 @@ const PivotalThinking = () => {
             Pivotal Thinking
           </h1>
           
-          <p className="text-primary-foreground/80 max-w-2xl animate-fade-in" style={{ willChange: "opacity, transform" }}>
+          <p className="text-primary-foreground/80 animate-fade-in" style={{ willChange: "opacity, transform" }}>
             Generating strategic intelligence to understand transitions, shocks, and inflection points across geopolitics, technology, economics, climate and society.
           </p>
         </div>
@@ -83,16 +83,36 @@ const PivotalThinking = () => {
       {/* Content Library */}
       <section id="content-library" className="py-24 bg-background">
         <div className="container-custom section-padding">
-          <h2 className="font-serif text-2xl md:text-3xl text-primary mb-12 animate-fade-in" style={{ willChange: "opacity, transform" }}>
-            Content Library
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {articles.map((article) => (
-              <div key={article.title} className="h-full">
-                <ArticleCard {...article} />
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            {/* Left Column - Article Cards */}
+            <div className="flex-1">
+              <div className="grid md:grid-cols-3 gap-8">
+                {articles.map((article) => (
+                  <div key={article.title} className="h-full">
+                    <ArticleCard {...article} />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            
+            {/* Right Column - Content Library Sidebar */}
+            <div className="lg:w-80 flex-shrink-0">
+              <h2 className="font-serif text-2xl md:text-3xl text-primary mb-8 animate-fade-in" style={{ willChange: "opacity, transform" }}>
+                Content Library
+              </h2>
+              <ol className="space-y-4">
+                {articles.map((article, index) => (
+                  <li key={article.title} className="animate-fade-in" style={{ willChange: "opacity, transform" }}>
+                    <Link 
+                      to={article.link}
+                      className="text-primary underline hover:text-primary/80 transition-colors"
+                    >
+                      {index + 1}. {article.title}
+                    </Link>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
       </section>

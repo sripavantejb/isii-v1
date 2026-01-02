@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -45,8 +45,8 @@
     --cream: 40 30% 97%;
     --gray-light: 210 20% 96%;
 
-    --font-serif: 'Noto Serif', Georgia, serif;
-    --font-sans: 'Source Sans 3', system-ui, sans-serif;
+    --font-serif: 'Inter', sans-serif;
+    --font-sans: 'Inter', sans-serif;
   }
 
   .dark {

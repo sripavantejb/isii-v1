@@ -28,7 +28,7 @@ const Engage = () => {
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4 animate-fade-in" style={{ willChange: "opacity, transform" }}>
             Engage
           </h1>
-          <p className="text-muted-foreground max-w-xl animate-fade-in" style={{ willChange: "opacity, transform" }}>
+          <p className="text-muted-foreground animate-fade-in" style={{ willChange: "opacity, transform" }}>
             Connect with ISII to explore strategic partnerships and collaboration opportunities.
           </p>
         </div>
@@ -41,7 +41,7 @@ const Engage = () => {
             Get in Touch
           </h2>
           
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in" style={{ willChange: "opacity, transform" }}>
+          <p className="text-muted-foreground mb-8 animate-fade-in" style={{ willChange: "opacity, transform" }}>
             Whether you represent a sovereign entity, institution, or organisation navigating complex transitions, we welcome the opportunity to explore how ISII can support your strategic objectives.
           </p>
           

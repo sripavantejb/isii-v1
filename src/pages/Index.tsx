@@ -62,7 +62,7 @@ const Index = () => {
         </div>
         
         <div className="relative z-10 container-custom section-padding pt-16 pb-12 md:pt-24 md:pb-24">
-          <div className="max-w-2xl">
+          <div>
             <h1 className="font-serif text-5xl md:text-6xl font-bold text-accent mb-4 animate-fade-in" style={{ willChange: "opacity, transform" }}>
               ISII
             </h1>
@@ -92,7 +92,7 @@ const Index = () => {
         />
         <div className="relative z-10 w-full">
           <div className="container-custom section-padding">
-            <div className="text-left max-w-4xl">
+            <div className="text-left">
               <span className="inline-block bg-primary px-4 py-1 text-xs text-primary-foreground uppercase tracking-wider mb-6">
                 Our Latest Pivotal Thinking
               </span>
@@ -102,7 +102,7 @@ const Index = () => {
                   <span style={{ display: 'block' }}>The National Security</span>
                   <span style={{ display: 'block' }}>Strategy 2025</span>
                 </span>
-                <span className="hidden md:block max-w-2xl">
+                <span className="hidden md:block">
                   America the Merchant Power,<br />
                   <span style={{ display: 'block', marginTop: '0.5rem' }}>The National Security Strategy 2025</span>
                 </span>
