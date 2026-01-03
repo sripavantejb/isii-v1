@@ -18,6 +18,7 @@ import { toast } from 'sonner';
 import { Plus, Edit, Trash2, LogOut } from 'lucide-react';
 import Layout from '@/components/Layout';
 import ProtectedRoute from '@/components/admin/ProtectedRoute';
+import ArticleLoader from '@/components/ArticleLoader';
 
 interface Article {
   _id: string;
@@ -164,9 +165,7 @@ const Dashboard = () => {
             </div>
 
             {loading ? (
-              <div className="text-center py-12">
-                <p style={{ color: '#1b315b' }}>Loading articles...</p>
-              </div>
+              <ArticleLoader count={6} columns={3} />
             ) : articles.length === 0 ? (
               <Card style={{ backgroundColor: '#ffffff' }}>
                 <CardContent className="py-12 text-center">

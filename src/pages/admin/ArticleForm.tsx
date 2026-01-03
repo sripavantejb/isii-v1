@@ -15,6 +15,7 @@ import Layout from '@/components/Layout';
 import ProtectedRoute from '@/components/admin/ProtectedRoute';
 import DragDropUpload from '@/components/admin/DragDropUpload';
 import { cn } from '@/lib/utils';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
 
 const ArticleForm = () => {
   const { id } = useParams();

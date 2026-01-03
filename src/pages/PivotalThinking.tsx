@@ -4,6 +4,8 @@ import Layout from "@/components/Layout";
 import ArticleCard from "@/components/ArticleCard";
 import { articlesAPI } from "@/services/api";
 import pivotalHero from "@/assets/pivotal-thinking-hero.jpg";
+import ArticleLoader from "@/components/ArticleLoader";
+import { LoadingSpinner } from "@/components/ui/loading-spinner";
 
 interface Article {
   _id: string;
@@ -122,9 +124,7 @@ const PivotalThinking = () => {
             {/* Left Column - Article Cards */}
             <div className="flex-1">
               {loading ? (
-                <div className="text-center py-12">
-                  <p className="text-muted-foreground">Loading articles...</p>
-                </div>
+                <ArticleLoader count={6} columns={3} />
               ) : articles.length === 0 ? (
                 <div className="text-center py-12">
                   <p className="text-muted-foreground">No articles available yet.</p>
@@ -151,7 +151,7 @@ const PivotalThinking = () => {
                 Content Library
               </h2>
               {loading ? (
-                <p className="text-muted-foreground">Loading...</p>
+                <LoadingSpinner text="Loading..." />
               ) : articles.length === 0 ? (
                 <p className="text-muted-foreground">No articles available yet.</p>
               ) : articles.slice(6).length === 0 ? (
