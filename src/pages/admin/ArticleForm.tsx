@@ -183,8 +183,7 @@ const ArticleForm = () => {
               <Button
                 variant="ghost"
                 onClick={() => navigate('/admin')}
-                className="mb-4"
-                style={{ color: '#1b315b' }}
+                className="mb-4 text-[#1b315b] hover:text-white hover:bg-[#1b315b]"
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Dashboard
@@ -218,16 +217,75 @@ const ArticleForm = () => {
                     <Button
                       variant="outline"
                       className={cn(
-                        "w-full justify-start text-left font-normal",
+                        "w-full justify-start text-left font-normal border-[#1b315b] text-[#1b315b] hover:bg-[#1b315b] hover:text-white",
                         !selectedDate && "text-muted-foreground"
                       )}
-                      style={{ borderColor: '#1b315b', color: '#1b315b' }}
                     >
                       <CalendarIcon className="mr-2 h-4 w-4" />
                       {selectedDate ? format(selectedDate, 'MMMM yyyy') : <span>Pick a month and year</span>}
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
+                  <PopoverContent className="w-auto p-6" align="start">
+                    <style>{`
+                      .rdp-dropdown {
+                        height: 2.5rem;
+                        border-radius: 0.375rem;
+                        border: 1px solid hsl(var(--input));
+                        background-color: hsl(var(--background));
+                        padding: 0.5rem 1rem;
+                        font-size: 0.875rem;
+                        font-weight: 500;
+                        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+                        transition: all 0.2s;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        cursor: pointer;
+                        margin: 0;
+                      }
+                      .rdp-dropdown:hover {
+                        background-color: hsl(var(--accent));
+                        color: hsl(var(--accent-foreground));
+                      }
+                      .rdp-dropdown:focus {
+                        outline: none;
+                        ring: 2px;
+                        ring-color: hsl(var(--ring));
+                        ring-offset: 2px;
+                      }
+                      .rdp-dropdown_month {
+                        min-width: 140px;
+                        width: 140px;
+                      }
+                      .rdp-dropdown_year {
+                        min-width: 100px;
+                        width: 100px;
+                      }
+                      .rdp-caption {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 1rem;
+                        padding: 0;
+                        margin: 0;
+                        width: 100%;
+                      }
+                      .rdp-caption_dropdowns {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+                        width: 100%;
+                      }
+                      .rdp-month {
+                        margin: 0;
+                        padding: 0;
+                      }
+                      .rdp-months {
+                        margin: 0;
+                        padding: 0;
+                      }
+                    `}</style>
                     <Calendar
                       mode="single"
                       selected={selectedDate}
@@ -238,9 +296,32 @@ const ArticleForm = () => {
                         }
                       }}
                       captionLayout="dropdown-buttons"
-                      fromYear={2020}
+                      fromYear={1990}
                       toYear={2030}
                       initialFocus
+                      classNames={{
+                        months: "flex flex-col m-0 p-0",
+                        month: "space-y-0 m-0 p-0",
+                        caption: "flex justify-center items-center gap-4 p-0 m-0 w-full",
+                        caption_label: "hidden",
+                        nav: "hidden",
+                        nav_button: "hidden",
+                        nav_button_previous: "hidden",
+                        nav_button_next: "hidden",
+                        table: "hidden",
+                        head_row: "hidden",
+                        head_cell: "hidden",
+                        row: "hidden",
+                        cell: "hidden",
+                        day: "hidden",
+                        day_range_end: "hidden",
+                        day_selected: "hidden",
+                        day_today: "hidden",
+                        day_outside: "hidden",
+                        day_disabled: "hidden",
+                        day_range_middle: "hidden",
+                        day_hidden: "hidden",
+                      }}
                     />
                   </PopoverContent>
                 </Popover>
@@ -267,8 +348,7 @@ const ArticleForm = () => {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="flex-1 w-full sm:w-auto"
-                  style={{ backgroundColor: '#1b315b', color: '#ffffff' }}
+                  className="flex-1 w-full sm:w-auto bg-[#1b315b] text-white hover:bg-[#1b315b]/90 hover:text-white"
                 >
                   <Save className="h-4 w-4 mr-2" />
                   {loading ? 'Saving...' : isEdit ? 'Update Article' : 'Create Article'}
@@ -277,8 +357,7 @@ const ArticleForm = () => {
                   type="button"
                   variant="outline"
                   onClick={() => navigate('/admin')}
-                  className="w-full sm:w-auto"
-                  style={{ borderColor: '#1b315b', color: '#1b315b' }}
+                  className="w-full sm:w-auto border-[#1b315b] text-[#1b315b] hover:bg-[#1b315b] hover:text-white"
                 >
                   Cancel
                 </Button>

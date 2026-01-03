@@ -39,11 +39,63 @@ const Dashboard = () => {
     fetchArticles();
   }, []);
 
+  // Helper function to parse "Month YYYY" format dates
+  const parseDate = (dateStr: string): Date => {
+    if (!dateStr || typeof dateStr !== 'string') {
+      return new Date(0); // Invalid date - will be sorted to the end
+    }
+
+    try {
+      const months: { [key: string]: number } = {
+        'january': 0, 'february': 1, 'march': 2, 'april': 3,
+        'may': 4, 'june': 5, 'july': 6, 'august': 7,
+        'september': 8, 'october': 9, 'november': 10, 'december': 11
+      };
+
+      const trimmed = dateStr.trim().toLowerCase();
+      const parts = trimmed.split(/\s+/);
+
+      if (parts.length !== 2) {
+        return new Date(0); // Invalid format
+      }
+
+      const monthName = parts[0];
+      const month = months[monthName];
+      const year = parseInt(parts[1], 10);
+
+      if (month === undefined || isNaN(year) || year < 1900 || year > 2100) {
+        return new Date(0); // Invalid month or year
+      }
+
+      return new Date(year, month, 1);
+    } catch (error) {
+      return new Date(0); // Return epoch for invalid dates
+    }
+  };
+
+  // Sort articles by date (latest first)
+  const sortArticlesByDate = (articles: Article[]): Article[] => {
+    return [...articles].sort((a, b) => {
+      const dateA = parseDate(a.date);
+      const dateB = parseDate(b.date);
+
+      // Sort descending (newest first)
+      // Invalid dates (epoch) will be sorted to the end
+      if (dateA.getTime() === 0 && dateB.getTime() === 0) return 0;
+      if (dateA.getTime() === 0) return 1; // Invalid dates go to end
+      if (dateB.getTime() === 0) return -1; // Valid dates come first
+
+      return dateB.getTime() - dateA.getTime();
+    });
+  };
+
   const fetchArticles = async () => {
     try {
       setLoading(true);
       const data = await articlesAPI.getAll();
-      setArticles(data);
+      // Sort articles by date (latest first) as a fallback
+      const sortedArticles = sortArticlesByDate(data);
+      setArticles(sortedArticles);
     } catch (error: any) {
       toast.error(error.message || 'Failed to fetch articles');
     } finally {
@@ -95,8 +147,7 @@ const Dashboard = () => {
               <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
                 <Button
                   onClick={() => navigate('/admin/articles/new')}
-                  className="w-full sm:w-auto"
-                  style={{ backgroundColor: '#1b315b', color: '#ffffff' }}
+                  className="w-full sm:w-auto bg-[#1b315b] text-white hover:bg-[#1b315b]/90 hover:text-white"
                 >
                   <Plus className="h-4 w-4 mr-2" />
                   New Article
@@ -104,8 +155,7 @@ const Dashboard = () => {
                 <Button
                   variant="outline"
                   onClick={handleLogout}
-                  className="w-full sm:w-auto"
-                  style={{ borderColor: '#1b315b', color: '#1b315b' }}
+                  className="w-full sm:w-auto border-[#1b315b] text-[#1b315b] hover:bg-[#1b315b] hover:text-white"
                 >
                   <LogOut className="h-4 w-4 mr-2" />
                   Logout
@@ -123,7 +173,7 @@ const Dashboard = () => {
                   <p className="text-muted-foreground mb-4">No articles found</p>
                   <Button
                     onClick={() => navigate('/admin/articles/new')}
-                    style={{ backgroundColor: '#1b315b', color: '#ffffff' }}
+                    className="bg-[#1b315b] text-white hover:bg-[#1b315b]/90 hover:text-white"
                   >
                     <Plus className="h-4 w-4 mr-2" />
                     Create First Article
@@ -153,8 +203,7 @@ const Dashboard = () => {
                           variant="outline"
                           size="sm"
                           onClick={() => navigate(`/admin/articles/edit/${article._id}`)}
-                          className="flex-1 hover:bg-[#1b315b] hover:text-white"
-                          style={{ borderColor: '#1b315b', color: '#1b315b' }}
+                          className="flex-1 border-[#1b315b] text-[#1b315b] hover:bg-[#1b315b] hover:text-white"
                         >
                           <Edit className="h-4 w-4 mr-2" />
                           Edit

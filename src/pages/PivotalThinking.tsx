@@ -21,10 +21,62 @@ const PivotalThinking = () => {
     fetchArticles();
   }, []);
 
+  // Helper function to parse "Month YYYY" format dates
+  const parseDate = (dateStr: string): Date => {
+    if (!dateStr || typeof dateStr !== 'string') {
+      return new Date(0); // Invalid date - will be sorted to the end
+    }
+
+    try {
+      const months: { [key: string]: number } = {
+        'january': 0, 'february': 1, 'march': 2, 'april': 3,
+        'may': 4, 'june': 5, 'july': 6, 'august': 7,
+        'september': 8, 'october': 9, 'november': 10, 'december': 11
+      };
+
+      const trimmed = dateStr.trim().toLowerCase();
+      const parts = trimmed.split(/\s+/);
+
+      if (parts.length !== 2) {
+        return new Date(0); // Invalid format
+      }
+
+      const monthName = parts[0];
+      const month = months[monthName];
+      const year = parseInt(parts[1], 10);
+
+      if (month === undefined || isNaN(year) || year < 1900 || year > 2100) {
+        return new Date(0); // Invalid month or year
+      }
+
+      return new Date(year, month, 1);
+    } catch (error) {
+      return new Date(0); // Return epoch for invalid dates
+    }
+  };
+
+  // Sort articles by date (latest first)
+  const sortArticlesByDate = (articles: Article[]): Article[] => {
+    return [...articles].sort((a, b) => {
+      const dateA = parseDate(a.date);
+      const dateB = parseDate(b.date);
+
+      // Sort descending (newest first)
+      // Invalid dates (epoch) will be sorted to the end
+      if (dateA.getTime() === 0 && dateB.getTime() === 0) return 0;
+      if (dateA.getTime() === 0) return 1; // Invalid dates go to end
+      if (dateB.getTime() === 0) return -1; // Valid dates come first
+
+      return dateB.getTime() - dateA.getTime();
+    });
+  };
+
   const fetchArticles = async () => {
     try {
       const data = await articlesAPI.getAll();
-      setArticles(data);
+      // Sort articles by date (latest first) as a fallback
+      const sortedArticles = sortArticlesByDate(data);
+      setArticles(sortedArticles);
     } catch (error) {
       console.error('Failed to fetch articles:', error);
     } finally {
