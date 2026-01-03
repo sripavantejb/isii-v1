@@ -124,7 +124,7 @@ const PivotalThinking = () => {
             {/* Left Column - Article Cards */}
             <div className="flex-1">
               {loading ? (
-                <ArticleLoader count={6} columns={3} />
+                <ArticleLoader count={6} columns={3} variant="public" />
               ) : articles.length === 0 ? (
                 <div className="text-center py-12">
                   <p className="text-muted-foreground">No articles available yet.</p>

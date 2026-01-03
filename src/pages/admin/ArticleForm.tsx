@@ -168,7 +168,7 @@ const ArticleForm = () => {
       <ProtectedRoute>
         <Layout>
           <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F3F5F7' }}>
-            <p style={{ color: '#1b315b' }}>Loading...</p>
+            <LoadingSpinner text="Loading article..." size="lg" />
           </div>
         </Layout>
       </ProtectedRoute>
