@@ -181,7 +181,7 @@ const PivotalThinking = () => {
                           href={article.pdfUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-primary underline hover:text-primary/80 transition-colors"
+                          className="text-sm text-primary underline hover:text-primary/80 transition-colors"
                         >
                           {index + 1}. {article.title}
                         </a>

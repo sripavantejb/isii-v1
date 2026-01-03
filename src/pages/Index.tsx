@@ -7,7 +7,7 @@ import { Brain, Shield, TrendingUp } from "lucide-react";
 const whiteHouseHero = "https://res.cloudinary.com/dqataciy5/image/upload/v1766554226/White_House_2642x826_1_ck6dkk.png";
 const heroImage = "https://res.cloudinary.com/dqataciy5/image/upload/v1767439020/Main_6_vn2com.png";
 const tabletImage = "https://res.cloudinary.com/dqataciy5/image/upload/v1766554969/Main_4_moupgm.png";
-const mobileImage = "https://res.cloudinary.com/dqataciy5/image/upload/v1767439020/Main_6_vn2com.png";
+const mobileImage = "https://res.cloudinary.com/dqataciy5/image/upload/v1767439839/Main_7_azvz6z.png";
 const bannerImage = "https://res.cloudinary.com/dqataciy5/image/upload/v1766566342/Frame_1707482985_1_d51ujw.png";
 
 const Index = () => {
@@ -55,7 +55,7 @@ const Index = () => {
         />
         
         <div className="relative z-10 container-custom section-padding w-full">
-          <div>
+          <div className="max-w-[775px]">
             <h1 className="font-serif text-5xl md:text-6xl font-bold text-accent mb-4 animate-fade-in" style={{ willChange: "opacity, transform" }}>
               ISII
             </h1>
