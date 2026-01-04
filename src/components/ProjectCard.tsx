@@ -1,6 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-
 interface ProjectCardProps {
   number: number;
   title: string;
@@ -26,22 +23,10 @@ const ProjectCard = ({ number, title, description, buttonLink = "#", buttonText 
       
       {/* Content */}
       <div className="pt-20 md:pt-24 flex flex-col flex-grow">
-        {/* Title - bold navy */}
-        <h3 className="font-sans text-xl md:text-2xl font-bold mb-3 leading-tight" style={{ color: '#1b315b' }}>
-          {title}
-        </h3>
-        
-        {/* Description - regular weight navy */}
-        <p className="text-base md:text-lg leading-relaxed font-sans font-normal mb-6 flex-1" style={{ color: '#1b315b' }}>
-          {description}
+        {/* Title and Description - inline bold title with regular description */}
+        <p className="text-base md:text-lg leading-relaxed font-sans" style={{ color: '#1b315b' }}>
+          <span className="font-bold">{title}</span> {description}
         </p>
-        
-        {/* Button at bottom */}
-        <div className="mt-auto">
-          <Button variant="default" className="w-full rounded-md font-sans font-medium text-sm md:text-base uppercase" asChild>
-            <Link to={buttonLink}>{buttonText}</Link>
-          </Button>
-        </div>
       </div>
     </div>
   );
