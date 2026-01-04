@@ -79,7 +79,7 @@ const Index = () => {
       </section>
 
       {/* Featured Article Section */}
-      <section className="relative py-20 flex items-center overflow-hidden" style={{ minHeight: '384px' }}>
+      <section className="relative pt-20 pb-8 flex items-center overflow-hidden" style={{ minHeight: '384px' }}>
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
@@ -113,7 +113,7 @@ const Index = () => {
       </section>
 
       {/* Capabilities Section */}
-      <section className="py-24 bg-gray-light">
+      <section className="pt-8 pb-24 bg-gray-light">
         <div className="container-custom section-padding">
           <h2 className="font-serif text-3xl md:text-4xl text-primary text-center mb-4 md:mb-16 font-bold">
             Our Capabilities

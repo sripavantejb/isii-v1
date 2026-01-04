@@ -146,7 +146,7 @@ const Header = ({ variant = "solid" }: HeaderProps) => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`py-3 text-primary-foreground/80 transition-colors border-b border-primary-foreground/10 no-underline hover:no-underline ${isActive(item.path) ? "text-primary-foreground font-medium" : ""} ${index === navItems.length - 1 ? 'border-b border-primary-foreground/10' : ''}`}
+                    className={`py-3 text-primary-foreground/80 transition-colors ${index === navItems.length - 1 ? '' : 'border-b border-primary-foreground/10'} no-underline hover:no-underline ${isActive(item.path) ? "text-primary-foreground font-medium" : ""}`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
