@@ -79,24 +79,23 @@ const Index = () => {
       </section>
 
       {/* Featured Article Section */}
-      <section className="relative min-h-[60vh] py-32 flex items-center">
+      <section className="relative py-20 flex items-center overflow-hidden" style={{ minHeight: '384px' }}>
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
             backgroundImage: `url(${bannerImage})`,
+            height: '384px',
           }}
         />
         <div className="relative z-10 w-full">
           <div className="container-custom section-padding">
             <div className="text-left">
-              <span className="inline-block bg-primary px-4 py-1 text-xs text-primary-foreground uppercase tracking-wider mb-6">
+              <span className="inline-block bg-primary px-4 py-1.5 text-xs text-primary-foreground uppercase tracking-wider mb-6">
                 Our Latest Pivotal Thinking
               </span>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary-foreground mb-4 text-left leading-relaxed">
-                <span className="md:hidden block">
-                  <span style={{ display: 'block' }}>America the Merchant Power,</span>
-                  <span style={{ display: 'block' }}>The National Security</span>
-                  <span style={{ display: 'block' }}>Strategy 2025</span>
+                <span className="md:hidden">
+                  America the Merchant Power, The National Security Strategy 2025
                 </span>
                 <span className="hidden md:block">
                   America the Merchant Power,<br />
@@ -116,7 +115,7 @@ const Index = () => {
       {/* Capabilities Section */}
       <section className="py-24 bg-gray-light">
         <div className="container-custom section-padding">
-          <h2 className="font-serif text-3xl md:text-4xl text-primary text-center mb-16 font-bold">
+          <h2 className="font-serif text-3xl md:text-4xl text-primary text-center mb-4 md:mb-16 font-bold">
             Our Capabilities
           </h2>
           

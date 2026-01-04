@@ -110,10 +110,11 @@ const PivotalThinking = () => {
       </section>
 
       {/* Banner Section */}
-      <section className="relative py-36 md:py-18">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${pivotalHero})` }}
+      <section className="relative w-full overflow-hidden" style={{ maxWidth: '1920px', height: '188px', opacity: 1, margin: '0 auto' }}>
+        <img 
+          src={pivotalHero}
+          alt="Pivotal Thinking Banner"
+          style={{ width: '100%', height: '288px', maxWidth: '1920px', objectFit: 'cover', opacity: 1 }}
         />
       </section>
 

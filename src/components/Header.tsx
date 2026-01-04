@@ -118,7 +118,7 @@ const Header = ({ variant = "solid" }: HeaderProps) => {
         {mobileMenuOpen && (
           <div className="md:hidden bg-primary border-t border-primary-foreground/20">
             <nav className="container-custom section-padding py-4 flex flex-col">
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 item.dropdown ? (
                   <Collapsible 
                     key={item.path} 
@@ -146,7 +146,7 @@ const Header = ({ variant = "solid" }: HeaderProps) => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`py-3 text-primary-foreground/80 transition-colors border-b border-primary-foreground/10 no-underline hover:no-underline ${isActive(item.path) ? "text-primary-foreground font-medium" : ""}`}
+                    className={`py-3 text-primary-foreground/80 transition-colors border-b border-primary-foreground/10 no-underline hover:no-underline ${isActive(item.path) ? "text-primary-foreground font-medium" : ""} ${index === navItems.length - 1 ? 'border-b border-primary-foreground/10' : ''}`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}

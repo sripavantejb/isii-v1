@@ -13,10 +13,6 @@ const Footer = () => {
       {/* Accent line */}
       <div className="h-1" style={{ backgroundColor: '#d6795a' }} />
       
-      {/* Light pink side borders */}
-      <div className="absolute left-0 top-0 bottom-0 w-1" style={{ backgroundColor: '#d6795a' }} />
-      <div className="absolute right-0 top-0 bottom-0 w-1" style={{ backgroundColor: '#d6795a' }} />
-      
       <div className="container-custom section-padding py-12 relative">
         {/* Desktop Layout */}
         <div className="hidden md:flex items-center justify-between relative">

@@ -13,19 +13,31 @@ const StrategicCounsel = () => {
   const mandates = [
     {
       image: mandateImage1,
-      title: "Growth and prosperity, and capital allocation for global themes",
+      title: (
+        <>
+          <span className="font-bold">Growth and prosperity</span>, and capital allocation for global themes
+        </>
+      ),
       description: "",
       buttonLink: "#",
     },
     {
       image: mandateImage2,
-      title: "Sovereignty, AI, strategic technologies, and strategic international coalitions",
+      title: (
+        <>
+          <span className="font-bold">Sovereignty, AI, strategic technologies,</span> and strategic international coalitions
+        </>
+      ),
       description: "",
       buttonLink: "#",
     },
     {
       image: mandateImage3,
-      title: "Strategy and mobilisation for the transition to the Information Era",
+      title: (
+        <>
+          <span className="font-bold">Strategy and mobilisation</span> for the transition to the Information Era
+        </>
+      ),
       description: "",
       buttonLink: "#",
     },
@@ -59,9 +71,9 @@ const StrategicCounsel = () => {
       </section>
 
       {/* Targeted Strategic Mandates Section */}
-      <section className="py-12 md:py-24 bg-background">
+      <section className="pt-10 md:pt-11 pb-8" style={{ backgroundColor: '#F3F5F7' }}>
         <div className="container-custom section-padding">
-          <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-primary mb-8 md:mb-16 font-bold">
+          <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-primary mb-4 md:mb-8 font-bold">
             Targeted Strategic Mandates
           </h2>
           
@@ -74,24 +86,20 @@ const StrategicCounsel = () => {
       </section>
 
       {/* Intractable Problems Section */}
-      <section className="py-12 md:py-24 bg-gray-light">
+      <section className="pt-0 pb-6 md:pb-12" style={{ backgroundColor: '#F3F5F7' }}>
         <div className="container-custom section-padding">
-          <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-primary mb-8 md:mb-16 font-bold">
-            Intractable Problems
-          </h2>
-          
-          <div className="max-w-4xl">
-            {problems.map((problem, index) => (
-              <div key={index}>
-                <div className="border-t border-border pt-4 md:pt-6 pb-4 md:pb-6">
-                  <p className="font-sans text-base md:text-lg text-primary leading-relaxed font-bold">
-                    {problem}
-                  </p>
-                </div>
-                <div className="border-b border-border" />
-              </div>
-            ))}
+          <div className="border-t border-b border-border py-4 md:py-6">
+            <p className="font-sans text-base md:text-lg text-primary leading-relaxed font-bold">
+              Intractable Problems
+            </p>
           </div>
+          {problems.map((problem, index) => (
+            <div key={index} className={`border-t ${index === problems.length - 1 ? '' : 'border-b'} border-border py-4 md:py-6`}>
+              <p className="font-sans text-base md:text-lg text-primary leading-relaxed font-bold">
+                {problem}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
     </Layout>
